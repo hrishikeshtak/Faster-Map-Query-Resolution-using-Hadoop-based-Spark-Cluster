@@ -11,3 +11,5 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
           "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hc-network/ad_hoc_client.sh" on one machine and run
           script "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hc-network/ad_hoc_server.sh" on another machine .
 
+    b) Wired network :
+        For creation of wired network , it required the machines are connected through LAN cable or Router or Switch .
