@@ -13,3 +13,7 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
 
     b) Wired network :
         For creation of wired network , it required the machines are connected through LAN cable or Router or Switch .
+
+2. Proxy Server or Network Address Translator (NAT) :
+        First read the PDF "NAT-or-Proxy-server-setup/Nat-or-proxy-server.pdf"
+
