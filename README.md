@@ -22,5 +22,9 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
         First read the PDF NAT-or-Proxy-server-setup/Nat-or-proxy-server.pdf
         [PDF] (https://github.com/hrishikeshtak/Faster-Map-Query-Resolution-using-Hadoop-based-Spark-Cluster/blob/master/NAT-or-Proxy-server-setup/Nat-or-proxy-server.pdf)
     
-       
+### 3. Hadoop Single Node :
+
+        Hadoop is an open-source framework that allows to store and process big data in a distributed environment              across clusters of computers using simple programming models.
+        To setup Hadoop single node on your linux based machine , check the "Hadoop-Single-Node-Setup" 
+        
        
