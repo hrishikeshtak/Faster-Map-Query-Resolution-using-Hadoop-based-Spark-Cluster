@@ -16,6 +16,8 @@ Run the script "hadoop-2.6.0_single_node_setup.sh"
 
 It will create the User "hduser" with the Password "hadoop"
 After completion of the script then go to hduser using
+
+
 "su - hduser"
 and then run the script "hadoop_single_node_start.sh" to start the Hadoop daemons
 and to stop the Hadoop daemons run the script "hadoop_single_node_stop.sh".
