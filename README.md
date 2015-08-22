@@ -24,7 +24,8 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
     
 ### 3. Hadoop Single Node :
 
-        Hadoop is an open-source framework that allows to store and process big data in a distributed environment              across clusters of computers using simple programming models.
+        Hadoop is an open-source framework that allows to store and process big data in a distributed 
+        environment across clusters of computers using simple programming models.
         To setup Hadoop single node on your linux based machine , check the "Hadoop-Single-Node-Setup" 
         
        
