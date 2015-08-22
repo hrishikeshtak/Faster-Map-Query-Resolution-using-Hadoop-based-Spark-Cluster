@@ -3,7 +3,7 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
 
 ## Getting Started
 
-1. Creation of Network
+### 1. Creation of Network
 
     a) Wireless Ad-Hoc network :
     
@@ -15,9 +15,10 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
         
         For creation of wired network , it required the machines are connected through LAN cable or Router or Switch .
 
-2. Proxy Server or Network Address Translator (NAT) :
+### 2. Proxy Server or Network Address Translator (NAT) :
         
         First read the PDF NAT-or-Proxy-server-setup/Nat-or-proxy-server.pdf
         [PDF] (https://github.com/hrishikeshtak/Faster-Map-Query-Resolution-using-Hadoop-based-Spark-Cluster/blob/master/NAT-or-Proxy-server-setup/Nat-or-proxy-server.pdf)
+    
        
        
