@@ -1,6 +1,6 @@
 #### Hadoop-2.6.0 single node setup for 32 bit OS
 
-To check the OS is 32 bit or 64 bit , run the command "$file /sbin/init"
+To check the OS is 32 bit or 64 bit , run the command **"$file /sbin/init"**
 
 First download 
 
