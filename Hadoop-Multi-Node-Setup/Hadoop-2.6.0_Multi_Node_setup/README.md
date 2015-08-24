@@ -12,7 +12,7 @@ save it in $HOME directory.
 For 64 bit OS install
 "sudo apt-get install ia32-libs"
 
-**On Master : **
+**On Master :**
 
 	Run the script **"hadoop-2.6.0_multi_node_setup_master.sh"**
 	
