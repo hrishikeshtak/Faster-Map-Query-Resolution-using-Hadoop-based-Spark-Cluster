@@ -35,5 +35,5 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
         To setup Hadoop multi node cluster , we required at least two machines ( one is master and 
         one is slave ) , and they need to be in same network . 
         To create our own subnet first see **" Creation-of-Ad-Hoc-Network "** , 
-        and then first run the script on master and then on the slave machine . In case of more that
+        and then first run the script on master and then on the slave machine . In case of more than
         one slave , we required to make changes in slave script .
