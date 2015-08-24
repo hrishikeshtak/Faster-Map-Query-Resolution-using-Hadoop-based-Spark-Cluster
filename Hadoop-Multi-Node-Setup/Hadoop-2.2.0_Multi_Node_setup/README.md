@@ -22,7 +22,7 @@ Check the connectivity with slave "ping -c2 192.168.1.91"
 After success of the script and the slave on another machine , run the following command to communicate 
 via ssh without password to the slave machine 
 
-"sudo -u hduser ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub hduser@slave01"
+**"sudo -u hduser ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub hduser@slave01"**
 
 Then login to hduser with the command
 **"su - hduser"**
