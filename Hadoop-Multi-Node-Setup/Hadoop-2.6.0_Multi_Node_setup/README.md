@@ -14,7 +14,7 @@ For 64 bit OS install
 
 **On Master :**
 
-	Run the script **"hadoop-2.6.0_multi_node_setup_master.sh"**
+	Run the script **hadoop-2.6.0_multi_node_setup_master.sh**
 	
 It will create the User **"hduser"** with the Password **"hadoop"** and it will assign the IP 
 address 192.168.1.90 to master.
@@ -39,7 +39,7 @@ To stop the Hadoop daemons  **"hadoop_multi_node_stop.sh"**.
 
 **On Slave :**
 
-	Run the script **"hadoop-2.6.0_multi_node_setup_slave.sh"**
+	Run the script **hadoop-2.6.0_multi_node_setup_slave.sh**
 	
 It will create the User **"hduser"** with the Password **"hadoop"** and it will assign the IP 
 address 192.168.1.91 to slave.
