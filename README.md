@@ -7,15 +7,18 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
 
     a) Wireless Ad-Hoc network :
     
-        First read the PDF "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hoc-network.pdf" and 
-        then run script "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hc-network/ad_hoc_client.sh" 
-        on one machine and run script "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hc-network/
-        ad_hoc_server.sh" on another machine .
+        First read the PDF 
+        "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hoc-network.pdf" 
+        and then run script 
+        "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hc-network/ad_hoc_client.sh" 
+        on one machine and run script 
+        "Creation-of-Ad-Hoc-Network/Creation-of-wireless-ad-hc-network/ad_hoc_server.sh"
+        on another machine .
 
     b) Wired network :
         
-        For creation of wired network , it required the machines are connected through LAN cable or Router
-        or Switch .
+        For creation of wired network , it required the machines are connected through 
+        LAN cable or Router or Switch .
 
 ### 2. Proxy Server or Network Address Translator (NAT) :
         
@@ -25,15 +28,24 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
     
 ### 3. Hadoop Single Node :
 
-        Hadoop is an open-source framework that allows to store and process big data in a distributed 
-        environment across clusters of computers using simple programming models.
-        To setup Hadoop single node on your linux based machine , check the "Hadoop-Single-Node-Setup" 
+        Hadoop is an open-source framework that allows to store and process big data 
+        in a distributed environment across clusters of computers using simple 
+        programming models.To setup Hadoop single node on your linux based machine , 
+        check the "Hadoop-Single-Node-Setup" 
         
        
 ### 4. Hadoop Multi Node Cluster :
 
-        To setup Hadoop multi node cluster , we required at least two machines ( one is master and 
-        one is slave ) , and they need to be in same network . 
+        To setup Hadoop multi node cluster , we required at least two machines 
+        ( one is master and one is slave ) , and they need to be in same network . 
         To create our own subnet first see **" Creation-of-Ad-Hoc-Network "** , 
-        and then first run the script on master and then on the slave machine . In case of more than
-        one slave , we required to make changes in slave script .
+        and then first run the script on master and then on the slave machine . 
+        In case of more than one slave , we required to make changes in slave script .
+
+### 5. Hadoop Wordcount Example : 
+        
+        To check that our Hadoop cluster is successful or not , try to run the 
+        hadoop wordcount example . Go to Hadoop-wordcount-example repo and then
+        run the script  run_hadoop-2.2.0_wordcount_program.sh .
+        
+        
