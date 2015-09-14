@@ -48,4 +48,6 @@ This is my M-Tech Project , this project contains the Map query resolutions usin
         hadoop wordcount example . Go to Hadoop-wordcount-example repo and then
         run the script  run_hadoop-2.2.0_wordcount_program.sh .
         
-        
+### 6. Spark Setup :
+
+        Setup spark single node or spark multi node setup .
