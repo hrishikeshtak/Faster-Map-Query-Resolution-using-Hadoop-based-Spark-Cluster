@@ -6,6 +6,6 @@ status on network & are free to associate with any other ad-hoc network device i
 
 ./configure-wireless-network.sh 192.168.1.90 master 
 
-or
+					or
 
 ./configure-wireless-network.sh 192.168.1.90 slave
