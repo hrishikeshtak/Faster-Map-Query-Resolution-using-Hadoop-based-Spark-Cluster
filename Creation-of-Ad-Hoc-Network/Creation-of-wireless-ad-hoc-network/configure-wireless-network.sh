@@ -1,5 +1,4 @@
 #!/bin/bash
-
 clear; 
 echo -e "\nConfigure wireless AdHoc network";
 ####################################################################################################
@@ -10,19 +9,18 @@ NODE_NAME=$2;
 GATEWAY=192.168.1.1;
 INTERFACES_CONF_FILE=/etc/network/interfaces;
 ####################################################################################################
-
 print_usage() {
 		echo -e "\nUsage: $0 <LOCAL_IPADDR> <NODE_NAME> ";
 		echo -e "    LOCAL_IPADDR - Static IP address that you want to assign";
 		echo -e "    NODE_NAME -  Node Name of machine";
 		echo -e "                         (ex. MASTER OR SLAVE)\n";
 }
-
+####################################################################################################
 error_check() {
 		echo -e "\nERROR: $SCRIPT_NAME: at Line $2 : $1";
 		exit 0;
 }
-
+####################################################################################################
 validate_args() {
 		if [ $COUNT_PARAM -eq 0 ]
 		then
@@ -51,7 +49,7 @@ validate_args() {
 				fi
 		fi
 }
-
+####################################################################################################
 validate_IP() {
 		local  ip=$1;
 		local  stat=1;
@@ -68,7 +66,6 @@ validate_IP() {
 		return $stat
 
 }
-
 ####################################################################################################
 configure_wireless_network() {
 		# If config already present comment it
