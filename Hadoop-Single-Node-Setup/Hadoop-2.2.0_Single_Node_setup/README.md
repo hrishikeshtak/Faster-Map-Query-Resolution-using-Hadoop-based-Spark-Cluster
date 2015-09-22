@@ -26,8 +26,6 @@ For 64 bit OS install
 
 
 It will create the User **"hduser"** with the Password **"hadoop"**
-
-
 Done
 
 

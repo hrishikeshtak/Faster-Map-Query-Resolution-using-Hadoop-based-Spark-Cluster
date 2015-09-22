@@ -38,7 +38,6 @@ error_check() {
 		echo -e "\nERROR: $SCRIPT_NAME: at Line $2 : $1";
 		exit 0;
 }
-
 ####################################################################################################;
 print_usage () {
 		echo -e "\nUsage: $0 <HADOOP_PARAM>"

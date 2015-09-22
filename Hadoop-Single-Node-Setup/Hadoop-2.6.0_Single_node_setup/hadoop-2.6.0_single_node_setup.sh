@@ -1,5 +1,4 @@
 #!/bin/bash
-
 clear;
 echo -e "\nHadoop 2.6.0 SingleNode Setup";
 cd $HOME;
@@ -39,7 +38,7 @@ error_check() {
 		echo -e "\nERROR: $SCRIPT_NAME: at Line $2 : $1";
 		exit 0;
 }
-
+####################################################################################################;
 print_usage () {
 		echo -e "\nUsage: $0 <HADOOP_PARAM>"
 		echo -e "    HADOOP_PARAM - Paramaeter that specify following options "
@@ -48,6 +47,7 @@ print_usage () {
 		echo -e "                   3. Hadoop Daemons Stop  , press stop or STOP   \n"
 
 }
+####################################################################################################;
 validate_args() {
 		if [ $COUNT_PARAM -eq 0 ]
 		then
