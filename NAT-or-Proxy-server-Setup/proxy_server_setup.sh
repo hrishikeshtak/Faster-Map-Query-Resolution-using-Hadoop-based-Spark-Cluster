@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+
+if [ $EUID -ne 0 ]
+then
+	echo -e "The user must be root\n";
+	exit 0;
+fi
 
 #  IPTABLES  PROXY  script for the Linux 2.4 kernel.
 #  This script is a derivitive of the script presented in
