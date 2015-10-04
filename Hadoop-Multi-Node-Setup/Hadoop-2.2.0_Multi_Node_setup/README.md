@@ -12,36 +12,27 @@ save it in $HOME directory.
 For 64 bit OS install
 "sudo apt-get install ia32-libs"
 
-**On Master :**
+#### How to use script
+**NOTE** : First setup successfully all **slaves** node and then setup **master** node.           
 
-	Run the script **hadoop-2.2.0_multi_node_setup_master.sh**
-It will create the User **"hduser"** with the Password **"hadoop"** and it will assign the IP 
-address 192.168.1.90 to master.
+#####1 On All Slaves :                
+  > To **setup** hadoop slave node :            
+  >>**./hadoop-2.2.0_multi_node_setup.sh LOCAL_IPADDR  setup slave**           
+where LOCAL_IPADDR - IP Address , that you want to assign to your system.    
+                  (Please give IP Address from the 192.168.1.0 subnet)         
 
-Check the connectivity with slave "ping -c2 192.168.1.91"
-After success of the script and the slave on another machine , run the following command to communicate 
-via ssh without password to the slave machine 
+#####2 On Master :
+  > To **setup** hadoop master node :        
+  >>**./hadoop-2.2.0_multi_node_setup.sh LOCAL_IPADDR  setup master**           
+where LOCAL_IPADDR - IP Address , that you want to assign to your system.    
+                  (Please give IP Address from the 192.168.1.0 subnet)         
+**NOTE** : It will ask the Ip addressess of all slaves and then Password of slaves.        
 
-**"sudo -u hduser ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub hduser@slave01"**
+  > To **start** hadoop daemons :
+  >> **./hadoop-2.2.0_multi_node_setup.sh LOCAL_IPADDR start**   
 
-Then login to hduser with the command
-**"su - hduser"**
-and then run the script : 
-
-To start the Hadoop daemons **"hadoop_multi_node_start.sh"**
-
-To stop the Hadoop daemons  **"hadoop_multi_node_stop.sh"**.
-
-
-
-**On Slave :**
-
-	Run the script **hadoop-2.2.0_multi_node_setup_slave.sh**
-It will create the User **"hduser"** with the Password **"hadoop"** and it will assign the IP 
-address 192.168.1.91 to slave.
-
-Check the connectivity with master "ping -c2 192.168.1.90"
-
+  > To **stop** hadoop daemons :
+  >> **./hadoop-2.2.0_multi_node_setup.sh LOCAL_IPADDR stop**   
 
 Done
 
