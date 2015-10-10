@@ -15,6 +15,6 @@ Read more about [osm2pgsql](http://wiki.openstreetmap.org/wiki/Osm2pgsql)
 check the schema of osm2pgsql [Osm2pgsql/schema](http://wiki.openstreetmap.org/wiki/Osm2pgsql/schema) 
 
 
-**Note : ** First setup Hadoop and spark    
-**How to run script : **      
+**Note :** First setup Hadoop and spark    
+**How to run script :**      
 >**./draw_polygon.py Region_Syddanmark.txt 2000**
