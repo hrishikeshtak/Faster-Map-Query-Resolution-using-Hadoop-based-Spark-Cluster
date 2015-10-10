@@ -40,4 +40,6 @@ and then run the script  **run_hadoop-2.2.0_wordcount_program.sh .**
         
 ### 6. Spark Setup :
 Setup spark single node or spark multi node setup .
- 
+  
+### 7. OpenStreetMap :            
+ OpenStreetMap (OSM) is a collaborative project to create a free editable map of the world. OpenStreetMap, the project that creates and distributes free geographic data for the world.

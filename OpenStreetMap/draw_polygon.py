@@ -12,7 +12,7 @@ if(len(sys.argv) < 3):
 	print "Enter epsilon value"
 	sys.exit(0)
 
-command = "/home/hduser/spark-1.1.0-bin-hadoop2.3/bin/pyspark  /home/hrishi/Final_presentation/RDP_and_Plot_pyplot.py "+sys.argv[1]+ " " +sys.argv[2];
+command = "/home/hduser/spark-1.1.0-bin-hadoop2.3/bin/pyspark  Ramer_Douglas_Peucker.py "+sys.argv[1]+ " " +sys.argv[2];
 #print command
 subprocess.call(command,shell=True)
 name = subprocess.check_output("date | cut --delimiter=\" \" -f4",shell=True)
