@@ -37,7 +37,7 @@ def configure_osm2pgsql():
 		execute_command(command,"postgis.sql file not found");
 		command = "psql -d %s -f 900913.sql" %DATABASE_NAME
 		execute_command(command,"900913.sql file not found");
-		command = "osm2pgsql -U postgres -s -S default.style %s" %(OSM_FILE)
+		command = "osm2pgsql -U postgres -d %s -s -S default.style %s" %(DATABASE_NAME,OSM_FILE)
 		execute_command(command,"OSM_FILE file not found");
 		command = "sudo sed -i -e 's/local   all             postgres                                md5/local   all             postgres                                trust/' /etc/postgresql/9.1/main/pg_hba.confsudo sed -e 's/local   all             postgres                                md5/local   all             postgres                                trust/' %s/pg_hba.conf" %POSTGRESQL_CONF_DIR
 		execute_command(command,"pg_hba.conf file not found");
