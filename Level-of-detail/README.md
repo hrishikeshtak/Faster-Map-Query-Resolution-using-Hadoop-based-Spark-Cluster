@@ -15,5 +15,5 @@ psql -U username -d database_name -c 'SELECT name,building,ST_AsText(way) from p
 **How To Run :**         
 **./draw_polygon.py Region_Syddanmark.txt 2000**           
  or         
-**python Ramer_Douglas_Peucker.py Region_Syddanmark.txt 2000**
+**python Ramer_Douglas_Peucker.py Region_Syddanmark.txt 2000**            
 It will save file called Output_Polygon.png
