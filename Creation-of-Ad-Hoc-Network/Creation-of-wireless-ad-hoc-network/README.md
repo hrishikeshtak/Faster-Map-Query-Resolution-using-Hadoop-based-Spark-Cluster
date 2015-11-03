@@ -4,8 +4,8 @@ status on network & are free to associate with any other ad-hoc network device i
 
 #### How to run script 
 
-./configure-wireless-network.sh 192.168.1.90 master 
+bash configure-wireless-network.sh 192.168.1.90 master 
 
 					or
 
-./configure-wireless-network.sh 192.168.1.90 slave
+bash configure-wireless-network.sh 192.168.1.90 slave

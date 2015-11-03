@@ -10,16 +10,16 @@ First setup Hadoop-Single-Node-Setup or Hadoop-Multi-Node-Setup
 			
 i. To **setup** spark:		
 
-		./spark_single_node_setup.sh setup
+>bash spark_single_node_setup.sh setup
 
 
 ii. To **start** spark daemons:
          
-		./spark_single_node_setup.sh start
+>bash spark_single_node_setup.sh start
 
 iii. To **stop** spark daemons :
 		
-		./spark_single_node_setup.sh stop
+>bash spark_single_node_setup.sh stop
 
 ####2 spark_multi_node.sh : 
 
@@ -37,13 +37,13 @@ b) Only on **MASTER** node : start the spark daemons.
 			
 i. To **setup** spark:		
 
-		./spark_multi_node_setup.sh setup <IP Address of Master>
+>bash spark_multi_node_setup.sh setup <IP Address of Master>
 
 ii. To **start** spark daemons:
          
-		./spark_multi_node_setup.sh start
+>bash spark_multi_node_setup.sh start
 
 iii. To **stop** spark daemons :
 		
-		./spark_multi_node_setup.sh stop
+>bash spark_multi_node_setup.sh stop
       

@@ -16,13 +16,13 @@ For 64 bit OS install
 #### How To Run Script
 
 1. To Configure Hadoop Single Node
-		**./hadoop-2.2.0_single_node_setup.sh setup**
+		**bash hadoop-2.2.0_single_node_setup.sh setup**
 
 2. To Start Hadoop Daemons
-		**./hadoop-2.2.0_single_node_setup.sh start**
+		**bash hadoop-2.2.0_single_node_setup.sh start**
 
 2. To Stop Hadoop Daemons
-		**./hadoop-2.2.0_single_node_setup.sh stop**
+		**bash hadoop-2.2.0_single_node_setup.sh stop**
 
 
 It will create the User **"hduser"** with the Password **"hadoop"**

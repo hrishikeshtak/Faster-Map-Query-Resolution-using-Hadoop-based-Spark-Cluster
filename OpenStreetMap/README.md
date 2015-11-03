@@ -16,7 +16,7 @@ check the schema of osm2pgsql [Osm2pgsql/schema](http://wiki.openstreetmap.org/w
 
 **How to run script :**       
 Download the .osm.bz2 file and extract in same directory and clone this repo and run       
-**./install_osm2pgsql.py PATH-OF-OSM-FILE"**
+**python install_osm2pgsql.py PATH-OF-OSM-FILE"**
 
 **What do we have now?** :    
 After success of script ( it will take long time as per size of OSM file )      

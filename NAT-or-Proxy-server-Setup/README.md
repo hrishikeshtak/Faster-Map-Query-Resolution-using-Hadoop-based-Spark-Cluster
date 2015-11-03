@@ -10,6 +10,6 @@ To implement NAT on your machine first read
 
 4.Firewall.pdf (optional)
 
-then run the script **"proxy_server_setup.sh"** as ROOT user.
+then run the script **"bash proxy_server_setup.sh"** as ROOT user.
 
 
