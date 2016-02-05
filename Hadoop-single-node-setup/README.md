@@ -1,7 +1,7 @@
 ### Hadoop single node setup
 
 
-To check the OS is 32 bit or 64 bit , run the command **"$file /sbin/init"**       
+To check the OS is 32 bit or 64 bit , run the command **"file /sbin/init"**       
 and then download jdk tarball as per bit instruction
 
 First download 
@@ -26,7 +26,7 @@ First download
 
 
 It will create the User **"hduser"** with the Password **"hadoop"**           
-After Success of script, open browser and typr **http://localhost:50070/**
+After Success of script, open browser and type **http://localhost:50070/**
 
 
 
