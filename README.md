@@ -45,3 +45,4 @@ check the directory [OpenStreetMap](OpenStreetMap/)
 ### 8. Level-of-detail :
  level of detail involves decreasing the complexity of a 3D object representation as it moves away from the viewer or according to other metrics such as object importance, viewpoint-relative speed or position.
 check the directory [ Level-of-detail]( Level-of-detail/)
+
