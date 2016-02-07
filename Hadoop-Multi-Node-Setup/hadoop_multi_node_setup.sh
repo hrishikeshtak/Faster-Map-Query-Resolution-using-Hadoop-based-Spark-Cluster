@@ -211,6 +211,7 @@ net.ipv6.conf.lo.disable_ipv6 = 1' /etc/sysctl.conf || { error_check error ${LIN
 
 configure_SSH_MASTER() {
     echo -e "Add entries in /etc/hosts file\n";
+    sudo sed -i "/master/ s/^#*/#/" /etc/hosts		
     sudo sed -i "1i $LOCAL_IPADDR master" /etc/hosts;
     echo -e "Password-less ssh from master to slave";
     echo -e "\n" | sudo -u hduser ssh-keygen -t rsa -P "";
@@ -228,6 +229,7 @@ configure_SSH_MASTER() {
                     echo -e "\nERROR: IP_ADDR $IP_ADDR is invalid";
                     exit 0;
             fi
+            sudo sed -i "/slave0$i/ s/^#*/#/" /etc/hosts		
             sudo sed -i "2i $IP_ADDR slave0$i" /etc/hosts;
             sudo -u hduser ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub hduser@slave0$i;
     done;
@@ -297,6 +299,9 @@ export PATH' /home/hduser/.bashrc || { error_check error ${LINENO}; };
             \n<value>yarn</value> \
             \n</property>" $HADOOP_CONF_PATH/mapred-site.xml || { error_check error ${LINENO}; };
     echo -e "mapred-site.xml Done !!!";
+}
+
+hadoop_configuration_MASTER() {
     echo -e "yarn-site.xml";
     sudo -u hduser sed -i "/<configuration>/a<property> \
             \n<name>yarn.nodemanager.aux-services</name> \
@@ -323,9 +328,6 @@ export PATH' /home/hduser/.bashrc || { error_check error ${LINENO}; };
             \n<value>master:8060</value> \
             \n</property>" $HADOOP_CONF_PATH/yarn-site.xml || { error_check error ${LINENO}; };
     echo -e "yarn-site.xml Done !!!";
-}
-
-hadoop_configuration_MASTER() {
     echo -e "Add entries in slaves file";
     sudo -u hduser sed -i 's/localhost/ /' $HADOOP_CONF_PATH/slaves;
     sudo -u hduser sed -i '1imaster' $HADOOP_CONF_PATH/slaves;
@@ -336,9 +338,42 @@ hadoop_configuration_MASTER() {
 }
 
 hadoop_configuration_SLAVE() {
+    echo -e "yarn-site.xml";
+    sudo -u hduser sed -i "/<configuration>/a<property> \
+            \n<name>yarn.nodemanager.aux-services</name> \
+            \n<value>mapreduce_shuffle</value> \
+            \n</property> \
+            \n<property> \
+            \n<name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name> \
+            \n<value>org.apache.hadoop.mapred.ShuffleHandler</value> \
+            \n</property> \
+            \n<property> \
+            \n<name>yarn.resourcemanager.resource-tracker.address</name> \
+            \n<value>master:8025</value> \
+            \n</property> \
+            \n<property> \
+            \n<name>yarn.resourcemanager.scheduler.address</name> \
+            \n<value>master:8030</value> \
+            \n</property> \
+            \n<property> \
+            \n<name>yarn.resourcemanager.address</name> \
+            \n<value>master:8040</value> \
+            \n</property>" $HADOOP_CONF_PATH/yarn-site.xml || { error_check error ${LINENO}; };
+    echo -e "yarn-site.xml Done !!!";
     echo -e "Add entries in slaves file";
     sudo -u hduser sed -i 's/localhost/ /' $HADOOP_CONF_PATH/slaves;
     sudo -u hduser sed -i '1i'$LOCAL_IPADDR'' $HADOOP_CONF_PATH/slaves;
+    echo -e "Enter IP Address of master";
+    read IP_ADDR;
+    if validate_IP $IP_ADDR
+    then
+            echo -e "\nIP_ADDR $IP_ADDR is valid";
+    else 
+            echo -e "\nERROR: IP_ADDR $IP_ADDR is invalid";
+            exit 0;
+    fi
+    sudo sed -i "/master/ s/^#*/#/" /etc/hosts		
+    sudo sed -i "2i $IP_ADDR master" /etc/hosts;
 }
 
 # Function to Format Hadoop DFS
@@ -347,6 +382,7 @@ hadoop_format() {
     sudo -u hduser $HADOOP_HOME_PATH/bin/hdfs namenode -format || { error_check error ${LINENO}; };
     echo -e "\nhduser created with the password \"hadoop\"\n";
     echo -e "Done Setting up Hadoop MultiNode Cluster\n";
+    sudo -u hduser /usr/local/hadoop/bin/hadoop version
 }
 
 # Function to Start Hadoop Daemons

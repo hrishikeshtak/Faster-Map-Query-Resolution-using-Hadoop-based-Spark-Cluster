@@ -219,6 +219,7 @@ hadoop_format() {
     sudo -u hduser $HADOOP_HOME_PATH/bin/hdfs namenode -format || { error_check error ${LINENO}; }
     echo -e "\nhduser created with the password \"hadoop\"\n"
     echo -e "Done Setting up Hadoop SingleNode Cluster\n"
+    sudo -u hduser /usr/local/hadoop/bin/hadoop version
 }
 # Function to Start Hadoop Daemons
 start_hadoop() {
