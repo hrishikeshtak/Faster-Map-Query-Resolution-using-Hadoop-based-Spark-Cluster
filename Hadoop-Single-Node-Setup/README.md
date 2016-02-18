@@ -26,7 +26,7 @@ First download
 
 
 It will create the User **"hduser"** with the Password **"hadoop"**           
-After Success of script, open browser and type **http://localhost:50070/**
+After Successfully starting Hadoop Daemons , open browser and go to [http://localhost:50070/](**http://localhost:50070/**)
 
 
 
