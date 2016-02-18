@@ -14,7 +14,7 @@ First download
 
 1 To Configure Hadoop Single Node             
 
->**bash hadoop_single_node_setup.sh setup ~/hadoop-2.7.2.tar.gz ~/jdk-8u72-linux-x64.tar.gz**
+>**bash hadoop_single_node_setup.sh setup Hadoop_Tarball JDK_Tarball**
 
 2 To Start Hadoop Daemons           
 
