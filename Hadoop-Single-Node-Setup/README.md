@@ -26,7 +26,18 @@ First download
 
 
 It will create the User **"hduser"** with the Password **"hadoop"**           
-After Successfully starting Hadoop Daemons , open browser and go to [http://localhost:50070/](http://localhost:50070/)
+After Successfully starting Hadoop Daemons : 
+ 
+>>hduser@NVSD:~$ jps                 
+7056 DataNode               
+7393 JobHistoryServer                    
+7267 NodeManager                  
+7813 Jps                    
+6970 NameNode                  
+7146 SecondaryNameNode                
+7211 ResourceManager                
+
+open browser and go to [http://localhost:50070/](http://localhost:50070/)
 
 
 

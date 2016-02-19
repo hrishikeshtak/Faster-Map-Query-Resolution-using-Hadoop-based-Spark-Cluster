@@ -223,7 +223,6 @@ hadoop_format() {
 }
 # Function to Start Hadoop Daemons
 start_hadoop() {
-    clear
     echo -e "Starting Hadoop daemons\n"
     sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start namenode || { error_check namenode-not-started ${LINENO};}
     sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start datanode || { error_check datanode-not-started ${LINENO};}
@@ -236,7 +235,6 @@ start_hadoop() {
 }
 # Function to Stop Hadoop Daemons
 stop_hadoop() {
-    clear
     echo -e "Stopping Hadoop daemons\n"
     sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop namenode || { error_check namenode-not-stoped ${LINENO};}
     sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop datanode || { error_check datanode-not-stoped ${LINENO};}
