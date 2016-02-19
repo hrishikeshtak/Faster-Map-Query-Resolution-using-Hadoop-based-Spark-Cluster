@@ -19,7 +19,21 @@ ii. To **start** spark daemons:
 
 iii. To **stop** spark daemons :
 		
->bash spark_single_node_setup.sh stop
+>bash spark_single_node_setup.sh stop         
+
+After successfully starting spark daemons log in to user hduser and run **jps** command:    
+>> hduser@NVSD:~$ jps         
+10097 ResourceManager              
+9841 DataNode              
+9777 NameNode             
+10227 JobHistoryServer              
+9989 SecondaryNameNode                
+11079 Jps              
+10889 Worker            
+10158 NodeManager              
+10702 Master             
+
+ And then open browser with [http://localhost:8081/](http://localhost:8081/)
 
 ####2 spark_multi_node.sh : 
 
