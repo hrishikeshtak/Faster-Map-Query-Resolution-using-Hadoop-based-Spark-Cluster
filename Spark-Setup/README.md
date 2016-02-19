@@ -10,7 +10,7 @@ First setup Hadoop-Single-Node-Setup or Hadoop-Multi-Node-Setup
 			
 i. To **setup** spark:		
 
->bash spark_single_node_setup.sh setup
+>bash spark_single_node_setup.sh setup SPARK_TARBALL
 
 
 ii. To **start** spark daemons:
@@ -51,7 +51,7 @@ b) Only on **MASTER** node : start the spark daemons.
 			
 i. To **setup** spark:		
 
->bash spark_multi_node_setup.sh setup <IP Address of Master>
+>bash spark_multi_node_setup.sh setup IP_Address_of_Master SPARK_TARBALL
 
 ii. To **start** spark daemons:
          

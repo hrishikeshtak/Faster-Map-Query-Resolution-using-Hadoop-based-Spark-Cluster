@@ -78,6 +78,7 @@ validate_args() {
         fi
     fi
 }
+
 install_JAVA() {
     sudo apt-get -y purge openjdk* &> /dev/null || { error_check error ${LINENO}; }
     sudo chmod -R 755 $JAVA_TAR
@@ -122,6 +123,7 @@ hadoop_user() {
     ls -l /usr/local
     sleep 1
 }
+
 # Function to configure Hadoop
 hadoop_configuration() {
     echo -e "Hadoop SingleNode Setup"
@@ -213,6 +215,7 @@ export PATH' /home/hduser/.bashrc || { error_check error ${LINENO}; }
             \n</property>" $HADOOP_CONF_PATH/yarn-site.xml || { error_check error ${LINENO}; }
     echo -e "yarn-site.xml Done !!!"
 }
+
 # Function to Format Hadoop DFS
 hadoop_format() {
     echo -e "Formating Hadoop Namenode\n"
@@ -221,28 +224,28 @@ hadoop_format() {
     echo -e "Done Setting up Hadoop SingleNode Cluster\n"
     sudo -u hduser /usr/local/hadoop/bin/hadoop version
 }
+
 # Function to Start Hadoop Daemons
 start_hadoop() {
     echo -e "Starting Hadoop daemons\n"
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start namenode || { error_check namenode-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start datanode || { error_check datanode-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start secondarynamenode || { error_check secondarynamenode-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start resourcemanager || { error_check resourcemanager-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start nodemanager || { error_check nodemanager-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh start historyserver || { error_check historyserver-not-started ${LINENO};}
-
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start namenode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start datanode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start secondarynamenode
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start resourcemanager
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start nodemanager
+    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh start historyserver
     sudo -u hduser /usr/local/java/$JAVA_DIR_NAME/bin/jps
 }
+
 # Function to Stop Hadoop Daemons
 stop_hadoop() {
     echo -e "Stopping Hadoop daemons\n"
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop namenode || { error_check namenode-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop datanode || { error_check datanode-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop secondarynamenode || { error_check secondarynamenode-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop resourcemanager || { error_check resourcemanager-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop nodemanager || { error_check nodemanager-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh stop historyserver || { error_check historyserver-not-stoped ${LINENO};}
-
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop namenode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop datanode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop secondarynamenode
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop resourcemanager
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop nodemanager
+    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh stop historyserver
     sudo -u hduser /usr/local/java/$JAVA_DIR_NAME/bin/jps
 }
 

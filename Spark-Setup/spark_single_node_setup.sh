@@ -48,11 +48,11 @@ validate_args() {
                 echo -e "\nERROR: $SPARK_TAR not exists"
                 exit 0
             fi
-            start_hadoop
             spark_configure
             exit 0
         elif [[ $SPARK_PARAM == "start" || $SPARK_PARAM == "START" ]]
         then
+            start_hadoop
             start_spark
             exit 0
 
@@ -80,38 +80,37 @@ export SPARK_MASTER_IP=127.0.0.1 \
 export SPARK_MASTER_PORT=7077' $SPARK_CONF_PATH/spark-env.sh
     sudo chown -R hduser:hadoop /home/hduser/$SPARK_DIR_NAME
     echo "Spark Setup successfully"
+    sudo rm -r $HOME/$SPARK_DIR_NAME
 }
 
 start_spark() {
-    sudo -u hduser /home/hduser/$SPARK_DIR_NAME/sbin/start-all.sh || { error_check spark-not-setup-properly ${LINENO}; }
+    sudo -u hduser /home/hduser/$SPARK_DIR_NAME/sbin/start-all.sh
 }
 
 stop_spark() {
-    sudo -u hduser /home/hduser/$SPARK_DIR_NAME/sbin/stop-all.sh || { error_check spark-not-setup-properly ${LINENO}; }
+    sudo -u hduser /home/hduser/$SPARK_DIR_NAME/sbin/stop-all.sh
 }
 
 # Function to Start Hadoop Daemons
 start_hadoop() {
     echo -e "Starting Hadoop daemons\n"
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start namenode || { error_check namenode-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start datanode || { error_check datanode-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start secondarynamenode || { error_check secondarynamenode-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start resourcemanager || { error_check resourcemanager-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start nodemanager || { error_check nodemanager-not-started ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh start historyserver || { error_check historyserver-not-started ${LINENO};}
-
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start namenode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemons.sh start datanode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh start secondarynamenode
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh start resourcemanager
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemons.sh start nodemanager
+    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh start historyserver
     sudo -u hduser /usr/local/java/$JDK_DIR_NAME/bin/jps
 }
 
 stop_hadoop() {
-    echo -e "Starting Hadoop daemons\n"
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop namenode || { error_check namenode-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop datanode || { error_check datanode-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop secondarynamenode || { error_check secondarynamenode-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop resourcemanager || { error_check resourcemanager-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop nodemanager || { error_check nodemanager-not-stoped ${LINENO};}
-    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh stop historyserver || { error_check historyserver-not-stoped ${LINENO};}
-
+    echo -e "Stopping Hadoop daemons\n"
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop namenode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemons.sh stop datanode
+    sudo -u hduser /usr/local/hadoop/sbin/hadoop-daemon.sh stop secondarynamenode
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemon.sh stop resourcemanager
+    sudo -u hduser /usr/local/hadoop/sbin/yarn-daemons.sh stop nodemanager
+    sudo -u hduser /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh stop historyserver
     sudo -u hduser /usr/local/java/$JDK_DIR_NAME/bin/jps
 }
 
